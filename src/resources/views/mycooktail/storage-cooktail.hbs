@@ -1,0 +1,50 @@
+<div class="mt-5">
+  <h3>My Cooktail</h3>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">Create At</th>
+        <th scope="col">Action</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {{#each cooktail}}
+      <tr>
+        <th scope="row">{{sum @index 1}}</th>
+        <td>{{this.name}}</td>
+        <td>{{this.category}}</td>
+        <td>{{this.updatedAt}}</td>
+        <td>
+          <a href="/cooktail/{{this._id}}/edit" class="btn btn-link">Edit<a/>
+        <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#{{this.slug}}">Delete</button>
+              <!-- Modal -->
+              <form  method="POST" action="/cooktail/{{this._id}}?_method=DELETE" >
+                <div class="modal fade" id="{{this.slug}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        Delete this cooktail
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </form>
+
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

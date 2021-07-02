@@ -1,0 +1,121 @@
+html {
+  font-size: 16px;
+  color: #000;
+}
+body {
+  background-color: #eeeaea;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none !important;
+}
+.custom {
+  &-nav {
+    justify-content: space-between !important;
+  }
+  &-brand {
+    margin-left: 50px;
+  }
+  &-dropdown {
+    margin-right: 50px;
+  }
+  &-card {
+    height: 370px;
+    justify-content: space-between;
+    transition: all 0.25s linear;
+    &:hover {
+      box-shadow: 0px 0px 8px 8px #b4b2b2;
+    }
+    &-body {
+      text-align: center;
+    }
+  }
+}
+#img-show {
+  display: block;
+  width: 20%;
+}
+.detail {
+  &__img {
+    width: 70%;
+  }
+  &__left,
+  &__right,
+  &__instruction {
+    text-align: center;
+  }
+}
+.create {
+  padding: 10px 10px;
+  background-color: white;
+  border-radius: 30px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
+
+  width: 50%;
+  &-heading {
+    text-align: center;
+    font-weight: 600;
+    color: #363a40;
+    font-size: 35px;
+    margin-bottom: 35px;
+  }
+}
+.form {
+  &-group {
+    margin-bottom: 25px;
+  }
+  &-label {
+    display: inline-block;
+    cursor: pointer;
+    color: #363a40;
+    margin-bottom: 15px;
+    font-size: 13px;
+  }
+
+  &-input {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    border: 0;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+    background-color: #f2f3f5;
+    color: #363a40;
+    font-size: 16px;
+  }
+  &-input::-webkit-input-placeholder {
+    color: #b4bdc1;
+  }
+
+  &-submit {
+    display: block;
+    margin: 0 auto;
+    margin-top: 45px;
+    width: 50%;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border: 0;
+    border-radius: 15px;
+    background-color: #81c91d;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 20px -5px rgba(129, 201, 29, 0.9);
+    outline: none;
+  }
+}

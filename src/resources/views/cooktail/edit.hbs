@@ -1,0 +1,55 @@
+<div class="create">
+  <h1 class="create-heading">Edit Cooktail</h1>
+  <form
+    method="POST"
+    action="/cooktail/{{cooktail._id}}?_method=PUT"
+    class="create-form"
+  >
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-input"
+        name="name"
+        placeholder="Name Cooktail"
+        value="{{cooktail.name}}"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-input"
+        name="category"
+        placeholder="Category"
+        value="{{cooktail.category}}"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-input"
+        name="instruction"
+        placeholder="Instruction"
+        value="{{cooktail.instruction}}"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-input"
+        name="image"
+        placeholder="Image Link"
+        value="{{cooktail.image}}"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-input"
+        name="ingredients"
+        placeholder="Ingredients"
+        value="{{cooktail.ingredients}}"
+      />
+    </div>
+    <button type="submit" class="form-submit">Save</button>
+  </form>
+</div>

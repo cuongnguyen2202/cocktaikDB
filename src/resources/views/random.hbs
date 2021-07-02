@@ -1,0 +1,64 @@
+<form method="POST" action="/random/store">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Name</label>
+    <input type="text" name="name" class="form-control" id="name" value="" />
+    <label for="exampleInputEmail1">Category</label>
+    <input
+      type="text"
+      name="category"
+      class="form-control"
+      id="category"
+      value=""
+    />
+    <label for="exampleInputEmail1">Instruction</label>
+    <input
+      type="text"
+      name="instruction"
+      class="form-control"
+      id="instruction"
+      value=""
+    />
+    <label for="exampleInputEmail1">Img</label>
+    <input type="text" name="image" class="form-control" id="img" value="" />
+    <img src="" alt="" id="img-show" />
+    <label for="exampleInputEmail1">ingredients</label>
+    <input
+      type="text"
+      name="ingredients"
+      class="form-control"
+      id="ingredients"
+      value=""
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <button
+    type="button"
+    class="btn btn-danger"
+    onclick="setValue()"
+  >RANDOM</button>
+</form>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+  integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script>
+
+  const setValue = () =>{let nameCooktail = document.getElementById("name"); let
+  category = document.getElementById("category"); let instruction =
+  document.getElementById("instruction"); let img =
+  document.getElementById("img"); let imgShow =
+  document.getElementById("img-show"); let ingredients =
+  document.getElementById("ingredients"); let dataList = {}; axios
+  .get("https://www.thecocktaildb.com/api/json/v1/1/random.php") .then((res) =>
+  { dataList = res.data.drinks[0]; nameCooktail.setAttribute("value",
+  dataList.strDrink); category.setAttribute("value", dataList.strCategory);
+  instruction.setAttribute("value", dataList.strInstructions);
+  img.setAttribute("value", dataList.strDrinkThumb); imgShow.setAttribute("src",
+  dataList.strDrinkThumb); let value = ""; for (let i = 1; i < 16; i++) { if
+  (dataList[`strIngredient${i}`] == null) { break; } value +=
+  `${dataList[`strIngredient${i}`]},`; } ingredients.setAttribute("value",
+  value); }) .catch((e) => console.log(e)); }
+
+</script>
