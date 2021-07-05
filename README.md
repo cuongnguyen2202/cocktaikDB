@@ -33,8 +33,9 @@ The folder structure of this app is explained below:
 | **src**/index.js    | Entry point to express app                                                                       |
 | package.json        | Contains npm dependencies as well as [build scripts](#what-if-a-library-isnt-on-definitelytyped) |
 
-### Running the build
+## Running the build
 
-Npm Script
-run project: npm start
-build scss watch to css: npm run -watch
+### Npm Script
+
+**run project: npm start**
+**build scss watch to css: npm run -watch**
