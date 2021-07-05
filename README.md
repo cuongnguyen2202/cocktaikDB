@@ -37,5 +37,5 @@ The folder structure of this app is explained below:
 
 ### Npm Script
 
-**run project: npm start**
+**run project: npm start** |
 **build scss watch to css: npm run -watch**
