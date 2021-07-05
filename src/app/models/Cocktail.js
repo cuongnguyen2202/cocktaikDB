@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import slug from "mongoose-slug-generator";
 mongoose.plugin(slug);
 const Schema = mongoose.Schema;
-const CooktailScheme = new Schema(
+const CocktailScheme = new Schema(
   {
     name: { type: String, required: true },
     category: { type: String },
@@ -13,5 +13,5 @@ const CooktailScheme = new Schema(
   },
   { timestamps: true }
 );
-const Cooktail = mongoose.model("Cooktail", CooktailScheme);
-export default Cooktail;
+const Cocktail = mongoose.model("Cocktail", CocktailScheme);
+export default Cocktail;

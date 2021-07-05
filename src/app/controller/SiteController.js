@@ -1,17 +1,17 @@
-import Cooktail from "../models/Cooktail.js";
+import Cocktail from "../models/Cocktail.js";
 import { multiMongooseToObject } from "../../util/mongoose.js";
 class SiteController {
   // Get /news
   index(req, res, next) {
-    Cooktail.find({})
+    Cocktail.find({})
       // .then((cooktail) =>
       //   res.render("home", {
       //     cooktail: multiMongooseToObject(cooktail),
       //   })
       // )
       // .catch(next);
-      .then((cooktail) => {
-        res.json(cooktail);
+      .then((cocktail) => {
+        res.json(cocktail);
       })
       .catch(next);
   }

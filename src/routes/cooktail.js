@@ -1,17 +1,17 @@
 import express from "express";
-import CooktailController from "../app/controller/CooktailController.js";
+import CocktailController from "../app/controller/CocktailController.js";
 const router = express.Router();
 
 // const siteController = require("../app/controllers/SiteController");
-const cooktailController = new CooktailController();
+const cocktailController = new CocktailController();
 // siteController
 
-router.get("/create", cooktailController.create);
-router.post("/store", cooktailController.store);
-router.get("/search", cooktailController.search);
-router.get("/:id/edit", cooktailController.edit);
-router.put("/:id", cooktailController.update);
-router.delete("/:id", cooktailController.delete);
-router.get("/:slug", cooktailController.detail);
+router.get("/create", cocktailController.create);
+router.post("/store", cocktailController.store);
+router.get("/search", cocktailController.search);
+router.get("/:id/edit", cocktailController.edit);
+router.put("/:id", cocktailController.update);
+router.delete("/:id", cocktailController.delete);
+router.get("/:slug", cocktailController.detail);
 
 export default router;

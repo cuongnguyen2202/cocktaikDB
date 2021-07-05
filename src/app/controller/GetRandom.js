@@ -1,4 +1,4 @@
-import Cooktail from "../models/Cooktail.js";
+import Cocktail from "../models/Cocktail.js";
 
 class RandomController {
   // Get /news
@@ -9,8 +9,8 @@ class RandomController {
     const formData = { ...req.body };
     formData.ingredients = formData.ingredients.split(",");
     formData.ingredients = formData.ingredients.filter(Boolean);
-    const cooktail = new Cooktail(formData);
-    cooktail
+    const cocktail = new Cocktail(formData);
+    cocktail
       .save()
       .then(() => res.redirect("/random/create"))
       .catch(next);

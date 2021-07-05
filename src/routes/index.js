@@ -1,12 +1,18 @@
 import siteRouter from "./site.js";
 import randomRouter from "./random.js";
-import cooktailRouter from "./cooktail.js";
-import myCooktailRouter from "./mycooktail.js";
+import cocktailRouter from "./cooktail.js";
+import myCocktailRouter from "./mycooktail.js";
+
 const route = (app) => {
-  app.use("/my", myCooktailRouter);
-  app.use("/cooktail", cooktailRouter);
+  app.use("/my", myCocktailRouter);
+  app.use("/cocktail", cocktailRouter);
   app.use("/random", randomRouter);
   app.use("/", siteRouter);
+  app.use(function (req, res) {
+    res.status(404).json({
+      message: "Page Not Found",
+    });
+  });
 };
 
 export default route;

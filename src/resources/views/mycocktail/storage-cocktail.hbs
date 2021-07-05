@@ -19,10 +19,10 @@
         <td>{{this.category}}</td>
         <td>{{this.updatedAt}}</td>
         <td>
-          <a href="/cooktail/{{this._id}}/edit" class="btn btn-link">Edit<a/>
+          <a href="/cocktail/{{this._id}}/edit" class="btn btn-link">Edit<a/>
         <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#{{this.slug}}">Delete</button>
               <!-- Modal -->
-              <form  method="POST" action="/cooktail/{{this._id}}?_method=DELETE" >
+              <form  method="POST" action="/cocktail/{{this._id}}?_method=DELETE" >
                 <div class="modal fade" id="{{this.slug}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">

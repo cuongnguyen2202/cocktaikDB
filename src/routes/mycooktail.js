@@ -1,12 +1,12 @@
 import express from "express";
-import MyCooktailController from "../app/controller/MyCooktailController.js";
+import MyCocktailController from "../app/controller/MyCocktailController.js";
 
 const router = express.Router();
 
 // const siteController = require("../app/controllers/SiteController");
-const myCooktailController = new MyCooktailController();
+const myCocktailController = new MyCocktailController();
 // siteController
 
-router.get("/my-cooktail", myCooktailController.show);
+router.get("/my-cocktail", myCocktailController.show);
 
 export default router;
