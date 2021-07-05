@@ -4,11 +4,15 @@ class SiteController {
   // Get /news
   index(req, res, next) {
     Cooktail.find({})
-      .then((cooktail) =>
-        res.render("home", {
-          cooktail: multiMongooseToObject(cooktail),
-        })
-      )
+      // .then((cooktail) =>
+      //   res.render("home", {
+      //     cooktail: multiMongooseToObject(cooktail),
+      //   })
+      // )
+      // .catch(next);
+      .then((cooktail) => {
+        res.json(cooktail);
+      })
       .catch(next);
   }
 }

@@ -6,11 +6,16 @@ import {
 class CooktailController {
   // GET /
   detail(req, res, next) {
+    // Cooktail.findOne({ slug: req.params.slug })
+    //   .then((cooktail) => {
+    //     return res.render("cooktail/detail", {
+    //       cooktail: mongooseToObject(cooktail),
+    //     });
+    //   })
+    //   .catch(next);
     Cooktail.findOne({ slug: req.params.slug })
       .then((cooktail) => {
-        return res.render("cooktail/detail", {
-          cooktail: mongooseToObject(cooktail),
-        });
+        return res.json(cooktail);
       })
       .catch(next);
   }
@@ -25,7 +30,12 @@ class CooktailController {
     const cooktail = new Cooktail(formData);
     cooktail
       .save()
-      .then(() => res.redirect("/"))
+      .then((cooktail) =>
+        res.json({
+          message: "new cooktail added",
+          data: cooktail,
+        })
+      )
       .catch(next);
   }
   //GET cooktail/:id/edit
@@ -44,13 +54,22 @@ class CooktailController {
     formData.ingredients = formData.ingredients.split(",");
     formData.ingredients = formData.ingredients.filter(Boolean);
     Cooktail.updateOne({ _id: req.params.id }, formData)
-      .then(() => res.redirect("/my/my-cooktail"))
+      .then((cooktail) =>
+        res.json({
+          message: "update successfully",
+          data: res.json(cooktail),
+        })
+      )
       .catch(next);
   }
   // [delete]cooktail:id
   delete(req, res, next) {
     Cooktail.deleteOne({ _id: req.params.id })
-      .then(() => res.redirect("back"))
+      .then(() =>
+        res.json({
+          message: "deleted",
+        })
+      )
       .catch(next);
   }
   // Search
@@ -63,7 +82,7 @@ class CooktailController {
       .catch(next);
     console.log(cooktail);
     console.log(queryTern);
-    res.render("home", {
+    res.json({
       cooktail: cooktail.filter((item) => {
         return (
           item.name.includes(queryTern) ||
